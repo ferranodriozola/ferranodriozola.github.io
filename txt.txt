@@ -1,0 +1,17 @@
+Inici
+    Mascotes
+    Córrer
+    Mapa
+    Trajectes
+
+
+
+https://www.w3schools.com/colors/colors_picker.asp
+cos: 95 Lightness
+header: 90%
+voltant dels botons normal: 75
+voltant dels botons clicats: 40
+voltant dels botons passant per sobre: fff
+
+botó de sota normal: 50
+bota de sota per sobre: 35
