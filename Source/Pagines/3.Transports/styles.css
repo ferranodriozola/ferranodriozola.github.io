@@ -1,0 +1,113 @@
+:root {
+  --color-taronja-correr: #fff3e6;
+  --color-blau-mascotes: #e6f6ff;
+  --color-vermell-transports: #fee8e7;
+  --color-verd-extra: #e5ffe5;
+  --color-lila-principal: #f2e6ff;
+  --color-marrófluix-mapa: #f5f4ef;
+
+  --color-blanc: #fff;
+
+  --color95: #fee8e7;
+  --color90: #fdd0ce;
+  --color75: #fa8a85;
+  --color50: #f5160a;
+  --color40: #c41208;
+  --color35: #ab0f07;
+
+  --colorboto: #4CAF50;
+  --colorbotoclicat: #3e8e41;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.back-to-top-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color50);
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+}
+
+.back-to-top-link:hover {
+  background-color: var(--color35);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color95);
+}
+
+header {
+  background-color: var(--color90);
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+  
+/* Estil per al menú desplegable */
+.dropdown {
+  position: absolute;
+  top: 20px; /* Ajusta aquest valor segons la teva necessitat */
+  left: 20px; /* Ajusta aquest valor segons la teva necessitat */
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 40px; /* Ajusta aquest valor segons la teva necessitat */
+  left: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+background-color: var(--color50);
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+transition: background-color 0.2s ease;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+}
+
+.dropbtn:hover, .dropbtn:focus {
+background-color: var(--color35);
+}

@@ -1,0 +1,26 @@
+Archi,burro,Valmanya,França,H,jpg
+Fabio,burro,Valmanya,França,H,jpg
+Lilith,cabra,Valmanya,França,H,jpg
+Anònim 1,burro,Valmanya,França,V,jpg
+Anònim 2,burro,Valmanya,França,H,jpg
+Anònim 1,ovella,Valmanya,França,H,jpg
+Anònim 2,ovella,Valmanya,França,H,jpg
+Acca,gos,Mastarone,Itàlia,H,jpg
+Eco,gos,Mastarone,Itàlia,H,jpg
+Amole (Maria) (†),gat,Mastarone,Itàlia,H,jpg
+Milu,gat,Mastarone,Itàlia,H,jpg
+Steven,ovella,Mastarone,Itàlia,H,jpg
+Pommie,gos,Monte San Pietro,Itàlia,H,jpg
+Dino (Eusebi),gat,Monte San Pietro,Itàlia,V,jpeg
+Gigi (Paula),gat,Monte San Pietro,Itàlia,V,jpg
+Φιλάκια,gos,Prinilas,Grècia,V,jpg
+Λούλου (Mr. Pedos),gat,Prinilas,Grècia,V,jpg
+Timidonsio,gat,Prinilas,Grècia,H,jpg
+Sofia,gat,Prinilas,Grècia,H,jpg
+Terminator,gat,Prinilas,Grècia,H,jpg
+La Vaca,vaca,Mastarone,Itàlia,V,jpg
+El Brau,brau,Mastarone,Itàlia,V,jpg
+Anònim 3,ovella,Mastarone,Itàlia,H,jpg
+Anònim 4,ovella,Mastarone,Itàlia,V,jpg
+Moksha,gat,Picherande,França,H,jpg
+Noisette,gat,Picherande,França,H,jpg
