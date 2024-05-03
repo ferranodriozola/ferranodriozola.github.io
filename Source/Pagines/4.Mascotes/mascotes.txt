@@ -13,7 +13,7 @@ Steven,ovella,Mastarone,Itàlia,H,jpg
 Pommie,gos,Monte San Pietro,Itàlia,H,jpg
 Dino (Eusebi),gat,Monte San Pietro,Itàlia,V,jpeg
 Gigi (Paula),gat,Monte San Pietro,Itàlia,V,jpg
-Φιλάκια,gos,Prinilas,Grècia,V,jpg
+Filákia,gos,Prinilas,Grècia,V,jpg
 Λούλου (Mr. Pedos),gat,Prinilas,Grècia,V,jpg
 Timidonsio,gat,Prinilas,Grècia,H,jpg
 Sofia,gat,Prinilas,Grècia,H,jpg
