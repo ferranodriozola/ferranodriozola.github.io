@@ -74,6 +74,7 @@ function crearimatges(Id, boldContent, textContent, imageUrl) {
     var img = document.createElement("img");
     img.src = imageUrl;
     img.className = 'icones';
+    img.setAttribute("loading", "lazy"); // Afegeix l'atribut per càrrega mandrosa
 
     paragraf.appendChild(img);
 
