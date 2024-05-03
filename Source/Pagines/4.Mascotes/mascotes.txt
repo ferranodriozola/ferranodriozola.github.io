@@ -1,6 +1,6 @@
 Archi,burro,Valmanya,França,H,jpg
 Fabio,burro,Valmanya,França,H,jpg
-Lilith,cabra,Valmanya,França,H,jpg
+Lilith,cabra,Valmanya,França,H,JPG
 Anònim 1,burro,Valmanya,França,V,jpg
 Anònim 2,burro,Valmanya,França,H,jpg
 Anònim 1,ovella,Valmanya,França,H,jpg
