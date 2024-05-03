@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Crear una divisió per a cada línia
       lines.forEach(line => {
-        const [id, category, location, country, orientation, jpg] = line.split(',');
+        const [nom, id, category, location, country, orientation, jpg] = line.split(',');
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
         galleryItem.setAttribute('data-category', category);
@@ -71,8 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       
         galleryItem.innerHTML = `
-        <a href="Fotos/${id},${category}.${jpg}" onclick="return false;">
-        <img src="Fotos/${id},${category}.${jpg}" loading="lazy" alt="${id}, ${category}">
+        <a href="Fotos/${nom}.${jpg}" onclick="return false;">
+        <img src="Fotos/${nom}.${jpg}" loading="lazy" alt="${id}, ${category}">
         </a>
         <h3>${id}</h3>
         <p id="migtítol">${category}</p>
