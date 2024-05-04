@@ -256,6 +256,7 @@ google.load("visualization", "1", {
     packages: ["corechart"]
 });
 google.setOnLoadCallback(drawChart1);
+google.setOnLoadCallback(drawChart2);
 
 function drawChart1() {
     var rawData = [
@@ -374,5 +375,125 @@ function drawChart1() {
     }
     
     var chart = new google.visualization.ComboChart(document.getElementById("chart1"));
+    chart.draw(data, options);
+}
+
+function drawChart2() {
+    var rawData = [
+    ["1a. Vl (13/8)", "Ritme", 12,2577209797657],
+    ["1a. Vl (13/8)", "Quilòmetres", 3,13],
+    
+    ["2a. Vl (15/8)", "Ritme", 7,19013237063779],
+    ["2a. Vl (15/8)", "Quilòmetres", 2,77],
+    
+    ["3a. Pr (22/8)", "Ritme", 7,37192282102462],
+    ["3a. Pr (22/8)", "Quilòmetres", 5,0o1],
+    
+    ["4a. Pr (26/8)", "Ritme", 6,75118858954041],
+    ["4a. Pr (26/8)", "Quilòmetres", 6,31],
+    
+    ["5a. Pr (27/8)", "Ritme", 6,52217239661186],
+    ["5a. Pr (27/8)", "Quilòmetres", 6,69],
+    
+    ["6a. Pr (29/8)", "Ritme", 7,30962152302782],
+    ["6a. Pr (29/8)", "Quilòmetres", 7,31],
+    
+    ["7a. Gz (1/9)", "Ritme", 7,89173789173789],
+    ["7a. Gz (1/9)", "Quilòmetres", 7,0o2],
+    
+    ["8a. Gz (4/9)", "Ritme", 7,17883055911225],
+    ["8a. Gz (4/9)", "Quilòmetres", 7,81],
+    
+    ["9a. Gz (6/9)", "Ritme", 7,68223989396952],
+    ["9a. Gz (6/9)", "Quilòmetres", 10,0o6],
+    
+    ["10a. Ch (13/9)", "Ritme", 6,32891414141414],
+    ["10a. Ch (13/9)", "Quilòmetres", 5,28],
+    
+    ["Cursa (17/9)", "Ritme", 5,76757917337627],
+    ["Cursa (17/9)", "Quilòmetres", 12,42],
+    
+    ["11a. OM (26/9)", "Ritme", 7,14195183776933],
+    ["11a. OM (26/9)", "Quilòmetres", 10,52],
+    
+    ["12a. OM (29/9)", "Ritme", 8,67108167770419],
+    ["12a. OM (29/9)", "Quilòmetres", 7,55],
+    
+    ["13a. OM (2/10)", "Ritme", 7,0o4],
+    ["13a. OM (2/10)", "Quilòmetres", 17,0o3],
+    
+    ["14. BB (11/10)", "Ritme", 7,58964143426295],
+    ["14. BB (11/10)", "Quilòmetres", 10,0o4],
+    
+    ["15. BB (14/10)", "Ritme", 7,26169844020797],
+    ["15. BB (14/10)", "Quilòmetres", 5,77],
+    
+    ["16. BBA (22/10)", "Ritme", 8,1],
+    ["16. BBA (22/10)", "Quilòmetres", 9,0o1],
+    
+    ["17. Ath (27/10)", "Ritme", 7,69771130750057],
+    ["17. Ath (27/10)", "Quilòmetres", 14,71],
+    
+    ["18. Ath (30/10)", "Ritme", 8,48899889988999],
+    ["18. Ath (30/10)", "Quilòmetres", 30,3],
+    
+    ["19. Ath (1/11)", "Ritme", 6,56730769230769],
+    ["19. Ath (1/11)", "Quilòmetres", 5,2],
+    
+    ["20. Ath (3/11)", "Ritme", 7,18878357030016],
+    ["20. Ath (3/11)", "Quilòmetres", 21,1],
+    
+    ["21. Ath (5/11)", "Ritme", 6,35029354207436],
+    ["21. Ath (5/11)", "Quilòmetres", 5,11],
+    
+    ["22. Ath (6/11)", "Ritme", 7,15885416666667],
+    ["22. Ath (6/11)", "Quilòmetres", 6,4],
+    
+    ["23. Ath (8/11)", "Ritme", 6,51873767258383],
+    ["23. Ath (8/11)", "Quilòmetres", 10,14],
+    
+    ["24. Ath (10/11)", "Ritme", 6,474609375],
+    ["24. Ath (10/11)", "Quilòmetres", 5,12],
+    
+    ["25. Marató d'Atenes", "Ritme", 7,51068865475645],
+    ["25. Marató d'Atenes", "Quilòmetres", 43,66],
+    ];
+    
+    var data = new google.visualization.DataTable();
+    data.addColumn("string", "Sortida");
+    data.addColumn("number", "Quilòmetres");
+    data.addColumn("number", "Ritme");
+    
+    var currentRow = null;
+    for (var i=0; i < rawData.length; i++) {
+        var date = rawData[i][0];
+        var col = rawData[i][1];
+        var value = rawData[i][2];
+        
+        if (currentRow == null || currentRow[0] != date) {
+            if (currentRow != null) data.addRow(currentRow);
+            currentRow = [date, null, null];      
+        }
+        
+        if (col == "Quilòmetres") currentRow[1] = value;
+        else if (col == "Ritme") currentRow[2] = value;
+    }
+    
+    if (currentRow != null) data.addRow(currentRow);
+    
+    var options = {
+        backgroundColor: 'transparent',
+        vAxes: [{
+            title: "",
+            minValue: 0
+        }],
+        series: {
+            0: { type: 'line', targetAxisIndex: 0 },
+            1: { type: 'bars', targetAxisIndex: 1 }
+        },
+        interpolateNulls: true
+    }
+    
+    var chart = new google.visualization.ComboChart(document.getElementById("chart2"));
     chart.draw(data, options);
 }
