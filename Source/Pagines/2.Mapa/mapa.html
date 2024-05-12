@@ -6,10 +6,9 @@
     <title>Mapa i recorregut</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="mapa.js"></script>
 </head>
 
-<>
     <header>
         <div class="dropdown">
             <button class="dropbtn">Menú</button>
@@ -22,27 +21,46 @@
             </div>
         </div>        
         <h1>Mapa i recorregut</h1>
-        <p>Tots els companys i número de nits i procedència</p>
-        <p>Llocs on hem dormit (potser alguna foto)</p>
-        <p>Hosts que hem tingut</p>
-        <p>Truites</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <nav class= "filters">
+            <ul>
+            <li><a class = "inici" href="#frança">França</a></li>
+            <li><a class = "inici" href="#italia">Itàlia</a></li>
+            <li><a class = "inici" href="#grecia">Grècia</a></li>
+            <li><a class = "inici" href="#mapa">Mapa</a></li>
+
+            </ul>
+        </nav>
+
     </header>
 
-    <div id="mapa_div"></div>
-    
-    <div class="container">
-        <iframe class="graph" scrolling="no" src="https://chart-studio.plotly.com/~ferranodri/6.embed"></iframe>
-        <iframe class="graph" scrolling="no" src="https://chart-studio.plotly.com/~ferranodri/9.embed"></iframe>
-        <iframe class="graph" scrolling="no" src="https://chart-studio.plotly.com/~ferranodri/11.embed"></iframe>
+    <h2 id="frança">França</h2>
+        <div class="casa" id="1"></div>
+        <div class="casa" id="2"></div>
+        <div class="casa" id="3"></div>
+        <div class="casa" id="4"></div>
+
+    <h2 id="italia">Itàlia</h2>
+        <div class="casa" id="5"></div>
+        <div class="casa" id="6"></div>
+        <div class="casa" id="7"></div>
+
+    <h2 id="grecia">Grècia</h2>
+        <div class="casa" id="8"></div>
+        <div class="casa" id="9"></div>
+        <div class="casa" id="10"></div>
+        <div class="casa" id="11"></div>
+        <div class="casa" id="12"></div>
+        <div class="casa" id="13"></div>
+        <div class="casa" id="14"></div>
+        <div class="casa" id="15"></div>
+
+    <div class="container" id="mapa">
+            <iframe class="graph" scrolling="no" src="https://chart-studio.plotly.com/~ferranodri/6.embed"></iframe>
+            <iframe class="graph" scrolling="no" src="https://chart-studio.plotly.com/~ferranodri/9.embed"></iframe>
+            <iframe class="graph" scrolling="no" src="https://chart-studio.plotly.com/~ferranodri/11.embed"></iframe>
     </div>
-
     
-
-
+    <div id="mapa_div"></div>
 
 <footer>
     <a href="https://www.instagram.com/ainhoandferran/" target="_blank"><img src="../../Icones/insta.png" alt="Perfil Insta" loading="lazy"></a>

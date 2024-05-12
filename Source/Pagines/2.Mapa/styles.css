@@ -18,6 +18,7 @@
   
   h1 {
     font-size: 40px;
+    text-align: center;
   }
   
   html {
@@ -130,14 +131,54 @@
   
   .dropbtn:hover, .dropbtn:focus {
   background-color: var(--color35);
+}
+
+.filters ul {
+    list-style: none;
+    margin-left: -40px;
   }
+
+  
+  .filters li,
+  .filters a {
+    display: inline-block;
+  }
+  
+  .filters a {
+    border: 1px solid var(--color75);
+    border-radius: 5px;
+    margin: 5px;  
+    margin-top: 10px;
+    padding: 8px 16px;
+  
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  
+  .filters a:hover {
+    border: 1px solid var(--color40);
+  }
+  
+  .filters a:link,
+  .filters a:visited,
+  .filters a:active {
+    color: black;
+}
   
 
 
 
 
 
-
+.icones {
+  margin-right: 10px;
+  vertical-align: middle;
+  border: 2px solid var(--color50); /* Color del borde: negre; amplada del borde: 2 píxels */
+  border-radius: 100px; /* Rodó en les cantonades (ajusta al teu gust) */
+  height: 50px;
+  width: 50px;
+}
 
 
 
@@ -148,20 +189,33 @@
     margin: 0 auto; /* Això centra el div horitzontalment */
     width: 809px; /* Pot ajustar-se segons la teva preferència */
     height: 500px; /* Pots ajustar l'altura com vulguis */
-  margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Per distribuir els iframes equitativament */
-  margin-bottom: 20px; /* Espai entre files */
+  margin-bottom: 5px; /* Espai entre files */
   margin-top: 20px;
 }
 
 .graph {
-  flex: 0 0 calc(33.33% - 5px); /* Calculem la mida de cada iframe, tenint en compte el marge */
+  flex: 0 0 calc(33.33% - 10px); /* Calculem la mida de cada iframe, tenint en compte el marge */
   margin-bottom: 10px; /* Espai entre iframes */
   border:none;
   height: 500px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h2{
+  font-size: 36px;
+  color: black;
+  letter-spacing: -1px;
+  margin: 0px;
+  margin-left: 10px;
+  font-family: fantasy;
+  margin-bottom: -10px;
+  margin-top: -0px;
 }
