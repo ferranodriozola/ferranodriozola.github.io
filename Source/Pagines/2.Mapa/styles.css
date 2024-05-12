@@ -148,18 +148,20 @@
     margin: 0 auto; /* Això centra el div horitzontalment */
     width: 809px; /* Pot ajustar-se segons la teva preferència */
     height: 500px; /* Pots ajustar l'altura com vulguis */
+  margin-top: 20px;
 }
-  
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Per distribuir els iframes equitativament */
   margin-bottom: 20px; /* Espai entre files */
+  margin-top: 20px;
 }
 
 .graph {
-  flex: 0 0 calc(50% - 10px); /* Calculem la mida de cada iframe, tenint en compte el marge */
+  flex: 0 0 calc(33.33% - 5px); /* Calculem la mida de cada iframe, tenint en compte el marge */
   margin-bottom: 10px; /* Espai entre iframes */
   border:none;
-  height: 900px;
+  height: 500px;
 }
