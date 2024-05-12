@@ -1,13 +1,12 @@
-  :root {
+:root {
     --color-taronja-correr: #fff3e6;
     --color-blau-mascotes: #e6f6ff;
     --color-vermell-transports: #fee8e7;
     --color-verd-extra: #e5ffe5;
     --color-lila-principal: #f2e6ff;
     --color-marrófluix-mapa: #f5f4ef;
-
+  
     --color-blanc: #fff;
-
   
     --color95: #f5f4ef;
     --color90: #ebe9e0;
@@ -15,9 +14,10 @@
     --color50: #9d9362;
     --color40: #7d764f;
     --color35: #6e6745;
-
-    --colorboto: #4CAF50;
-    --colorbotoclicat: #3e8e41;
+  }
+  
+  h1 {
+    font-size: 40px;
   }
   
   html {
@@ -53,6 +53,25 @@
     background-color: var(--color90);
     padding: 20px;
     text-align: center;
+  }
+  
+  footer {
+    background-color: var(--color90);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer img {
+    width: 36px; /* Amplada de les imatges */
+    height: auto; /* Manté la proporció original de l'alçada */
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: transform 0.3s ease-in-out; /* Transició suau de 0.3 segons */
+  }
+  
+  footer img:hover {
+    transform: scale(1.1); /* Augmenta una mica la mida al passar el ratolí */
   }
   
   main {
@@ -112,6 +131,7 @@
   .dropbtn:hover, .dropbtn:focus {
   background-color: var(--color35);
   }
+  
 
 
 
@@ -124,7 +144,22 @@
 
 
 
-#regions_div {
-    width: 900px;
-    height: 500px;
+#mapa_div {
+    margin: 0 auto; /* Això centra el div horitzontalment */
+    width: 809px; /* Pot ajustar-se segons la teva preferència */
+    height: 500px; /* Pots ajustar l'altura com vulguis */
+}
+  
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Per distribuir els iframes equitativament */
+  margin-bottom: 20px; /* Espai entre files */
+}
+
+.graph {
+  flex: 0 0 calc(50% - 10px); /* Calculem la mida de cada iframe, tenint en compte el marge */
+  margin-bottom: 10px; /* Espai entre iframes */
+  border:none;
+  height: 900px;
 }

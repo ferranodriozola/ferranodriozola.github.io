@@ -118,7 +118,7 @@ function generarHTML(id) {
     // Crear el div amb la classe 'titols' i l'id 'titol1'
     var titolDiv = document.createElement("div");
     titolDiv.className = "titols";
-    titolDiv.id = `titol${id}`;
+    titolDiv.id = `sortida${id}`;
 
     // Crear el div amb la classe 'informacio'
     var informacioDiv = document.createElement("div");
@@ -203,16 +203,16 @@ fetch('mapa.txt')
             crearmapa(`mapa${id}`, `gpx/${id}.gpx`, zoom);
             
             if (id === "1") {
-                creartitol(`titol${id}`, `${id}a "SORTIDA"`);
+                creartitol(`sortida${id}`, `${id}a "SORTIDA"`);
 
             } else if (id === "cursa") {
-                creartitol(`titol${id}`, `CURSA AL CASTELL DE RACCONIGI`);
+                creartitol(`sortida${id}`, `CURSA AL CASTELL DE RACCONIGI`);
 
-            } else if (id === "25") {
-                creartitol(`titol${id}`, `40ENA MARATÓ D'ATENES`);
+            } else if (id === "marato") {
+                creartitol(`sortida${id}`, `40ENA MARATÓ D'ATENES`);
                 
             } else {
-                creartitol(`titol${id}`, `${id}a SORTIDA${titol}`);
+                creartitol(`sortida${id}`, `${id}a SORTIDA${titol}`);
             }
 
             crearimatges(`mapText${id}`, "Temps: ", estona, '../../Icones/temps.png');

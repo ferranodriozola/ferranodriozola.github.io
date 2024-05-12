@@ -1,3 +1,11 @@
+//Back to top
+var backToTopLink = document.createElement('a');
+backToTopLink.href = '#top';
+backToTopLink.innerHTML = 'Torna a dalt';
+backToTopLink.classList.add('back-to-top-link');
+document.body.appendChild(backToTopLink);
+
+
 google.charts.load('current', {
     'packages':['geochart'],
   });
@@ -20,19 +28,7 @@ google.charts.load('current', {
       region: '150', 
     };
   
-    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    var chart = new google.visualization.GeoChart(document.getElementById('mapa_div'));
   
     chart.draw(data, options);
-  }
-
-
-
-
-
-
-//Back to top
-var backToTopLink = document.createElement('a');
-backToTopLink.href = '#top';
-backToTopLink.innerHTML = 'Torna a dalt';
-backToTopLink.classList.add('back-to-top-link');
-document.body.appendChild(backToTopLink);
+}
