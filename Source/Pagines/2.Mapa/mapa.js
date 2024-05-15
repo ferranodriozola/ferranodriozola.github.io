@@ -78,47 +78,62 @@ function crearimatges(Id, boldContent, textContent, imageUrl) {
   document.getElementById(Id).appendChild(paragraf);
 }
 
+function creardiv(Idpare, Idpropi, classe) {
+  var div = document.createElement("div");
+  div.classList.add(classe);
+  div.id = Idpropi;
+
+  var parentElement = document.getElementById(Idpare);
+  parentElement.appendChild(div);
+}
 
 fetch('cases.txt')
     .then(response => response.text())
     .then(rawData => {
         const lines = rawData.split('\n');
         lines.forEach((line, index) => {
-            const [id, nom, host, nits, companys, truites] = line.split('.');
+            const [id, nom, host, nits, truites, imatges] = line.split('.');
 
+            var segonid = `${id}.${id}`;
             creartitol(id, nom)
 
-            crearimatges(id, "Host: ", host, "../../Icones/host.png")
-            crearimatges(id, "Nits: ", nits, "../../Icones/nits.png")
-            crearimatges(id, "Truites: ", truites, "../../Icones/truita.png")
+            creardiv(id, segonid, "informacio")
+
+            creardiv(segonid, `text${id}`, "text")
+            creardiv(segonid, `imatges${id}`, "imatges")
+            generateGallery(imatges, id, `imatges${id}`)
+
+            crearimatges(`text${id}`, "Host: ", host, "../../Icones/host.png")
+            crearimatges(`text${id}`, "Nits: ", nits, "../../Icones/nits.png")
+            crearimatges(`text${id}`, "Truites: ", truites, "../../Icones/truita.png")
 
             if (id === "1") {
-              crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-              imprimirLiniesDesitjades([1,2,3], id);
+              crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+              imprimirLiniesDesitjades([1,2,3], `text${id}`);
 
           } else if (id === "2") {
-            crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-            imprimirLiniesDesitjades([4,5,6,7], id);
+            crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+            imprimirLiniesDesitjades([4,5,6,7], `text${id}`);
               
           } else if (id === "3") {
-            crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-            imprimirLiniesDesitjades([8,9], id);
+            crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+            imprimirLiniesDesitjades([8,9], `text${id}`);
               
           } else if (id === "5") {
-            crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-            imprimirLiniesDesitjades([10,11,12,13,14,15,16,17,18,19,20], id);
+            crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+            imprimirLiniesDesitjades([10,11,12,13,14,15,16,17,18,19,20], `text${id}`);
               
           } else if (id === "7") {
-            crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-            imprimirLiniesDesitjades([21], id);
+            crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+            imprimirLiniesDesitjades([21], `text${id}`);
 
           } else if (id === "8") {
-            crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-            imprimirLiniesDesitjades([22], id);
+            crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+            imprimirLiniesDesitjades([22], `text${id}`);
 
           } else if (id === "13") {
-            crearimatges(id, "Companys: ", "", "../../Icones/companys.png")
-            imprimirLiniesDesitjades([23], id);
+            crearimatges(`text${id}`, "Companys: ", "", "../../Icones/companys.png")
+            imprimirLiniesDesitjades([23], `text${id}`);
 
               
           } else {
@@ -129,9 +144,6 @@ fetch('cases.txt')
     .catch(error => {
         console.error('Error al cargar el archivo:', error);
 });
-
-
-
 
 
 function imprimirLiniesDesitjades(liniesDesitjades, id) {  
@@ -146,4 +158,51 @@ function imprimirLiniesDesitjades(liniesDesitjades, id) {
       });
     })
     .catch(error => console.error('Error:', error));
+}
+
+
+
+
+
+function generateGallery(numImages, id, parentId) {
+  const galleryContainer = document.getElementById(parentId);
+
+  if (!galleryContainer) {
+    console.error(`Element with id ${parentId} not found.`);
+    return;
+  }
+
+  const largeImage = document.createElement('img');
+  largeImage.id = `largeImage${id}`;
+  largeImage.className = 'large-image';
+  largeImage.src = `Imatges/${id}/1.jpg`;
+  largeImage.alt = 'Imatge Gran';
+  largeImage.loading = 'lazy';
+  galleryContainer.appendChild(largeImage);
+
+  const thumbnailsContainer = document.createElement('div');
+  thumbnailsContainer.className = 'thumbnails';
+  galleryContainer.appendChild(thumbnailsContainer);
+
+  for (let i = 1; i <= numImages; i++) {
+    const thumbnailDiv = document.createElement('div');
+    thumbnailDiv.className = 'thumbnail';
+
+    const thumbnailImg = document.createElement('img');
+    thumbnailImg.src = `Imatges/${id}/${i}.jpg`;
+    thumbnailImg.alt = `Imatge ${i}`;
+    thumbnailImg.loading = 'lazy';
+
+    thumbnailImg.addEventListener('click', function() {
+      changeImage(`Imatges/${id}/${i}.jpg`, id);
+    });
+
+    thumbnailDiv.appendChild(thumbnailImg);
+    thumbnailsContainer.appendChild(thumbnailDiv);
+  }
+}
+
+function changeImage(src, id) {
+  const largeImage = document.getElementById(`largeImage${id}`);
+  largeImage.src = src;
 }

@@ -8,15 +8,17 @@
 
   --color-blanc: #fff;
 
-  --color95: #fee8e7;
-  --color90: #fdd0ce;
-  --color75: #fa8a85;
-  --color50: #f5160a;
-  --color40: #c41208;
-  --color35: #ab0f07;
+  --color95: #f5f4ef;
+  --color90: #ebe9e0;
+  --color75: #cec9b1;
+  --color50: #9d9362;
+  --color40: #7d764f;
+  --color35: #6e6745;
+}
 
-  --colorboto: #4CAF50;
-  --colorbotoclicat: #3e8e41;
+h1 {
+  font-size: 40px;
+  text-align: center;
 }
 
 html {
@@ -54,6 +56,25 @@ header {
   text-align: center;
 }
 
+footer {
+  background-color: var(--color90);
+  padding: 20px;
+  text-align: center;
+}
+
+footer img {
+  width: 36px; /* Amplada de les imatges */
+  height: auto; /* Manté la proporció original de l'alçada */
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: transform 0.3s ease-in-out; /* Transició suau de 0.3 segons */
+}
+
+footer img:hover {
+  transform: scale(1.1); /* Augmenta una mica la mida al passar el ratolí */
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -73,7 +94,7 @@ main {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 166px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   top: 40px; /* Ajusta aquest valor segons la teva necessitat */
@@ -110,4 +131,37 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 
 .dropbtn:hover, .dropbtn:focus {
 background-color: var(--color35);
+}
+
+.filters ul {
+  list-style: none;
+  margin-left: -40px;
+}
+
+
+.filters li,
+.filters a {
+  display: inline-block;
+}
+
+.filters a {
+  border: 1px solid var(--color75);
+  border-radius: 5px;
+  margin: 5px;  
+  margin-top: 10px;
+  padding: 8px 16px;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.filters a:hover {
+  border: 1px solid var(--color40);
+}
+
+.filters a:link,
+.filters a:visited,
+.filters a:active {
+  color: black;
 }

@@ -1,17 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Charts Example</title>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Galeria d'Imatges</title>
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .large-image {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .thumbnails {
+            display: flex;
+        }
+        .thumbnail {
+            margin: 0 5px;
+        }
+        .thumbnail img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-    <div class= "chart" id="chart1"></div>
-</body>
+    <div id="gallery" class="gallery-container"></div>
 
+    <script>
+        function generateGallery(numImages) {
+            const galleryContainer = document.getElementById('gallery');
+
+            // Create and append the large image element
+            const largeImage = document.createElement('img');
+            largeImage.id = 'largeImage';
+            largeImage.className = 'large-image';
+            largeImage.src = `image1.jpg`;
+            largeImage.alt = `Imatge Gran`;
+            galleryContainer.appendChild(largeImage);
+
+            // Create and append the thumbnails container
+            const thumbnailsContainer = document.createElement('div');
+            thumbnailsContainer.className = 'thumbnails';
+            galleryContainer.appendChild(thumbnailsContainer);
+
+            // Create and append each thumbnail
+            for (let i = 1; i <= numImages; i++) {
+                const thumbnailDiv = document.createElement('div');
+                thumbnailDiv.className = 'thumbnail';
+
+                const thumbnailImg = document.createElement('img');
+                thumbnailImg.src = `image${i}.jpg`;
+                thumbnailImg.alt = `Imatge ${i}`;
+                thumbnailImg.setAttribute('onclick', `changeImage('image${i}.jpg')`);
+
+                thumbnailDiv.appendChild(thumbnailImg);
+                thumbnailsContainer.appendChild(thumbnailDiv);
+            }
+        }
+
+        function changeImage(src) {
+            const largeImage = document.getElementById('largeImage');
+            largeImage.src = src;
+        }
+
+        // Call the function to generate the gallery with a specified number of images
+        generateGallery(4);
+    </script>
+</body>
 </html>

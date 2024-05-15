@@ -94,7 +94,7 @@
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 166px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     top: 40px; /* Ajusta aquest valor segons la teva necessitat */
@@ -210,12 +210,90 @@
 }
 
 h2{
-  font-size: 36px;
+  font-size: 40px;
   color: black;
   letter-spacing: -1px;
-  margin: 0px;
-  margin-left: 10px;
   font-family: fantasy;
-  margin-bottom: -10px;
-  margin-top: -0px;
+  margin-top: 10px;
+  margin-bottom: -15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: var(--color75);
+}
+
+.companys_text {
+  margin-left: 65px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: -10px;
+}
+
+.casa {
+  margin-bottom: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.titol{
+  background-color: var(--color90);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px
+;}
+
+.text_icones {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.imatges {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.large-image {
+  width: auto;
+  height: 500px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  justify-content: center;
+}
+
+.large-image:hover {
+  border-color: var(--color75);
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+
+}
+
+.thumbnail {
+  margin: 0 5px;
+}
+
+.thumbnail img {
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.informacio {
+  display: flex;
+}
+
+.text{
+  margin-right: 50px;
+}
+
+.thumbnail img:hover{
+  border-color: var(--color75);
+}
+
+#mapa_div {
+  margin-top: 30px;
 }

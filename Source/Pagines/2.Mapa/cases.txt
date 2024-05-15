@@ -1,15 +1,15 @@
-1.Mas Cabanats, Valmanya.Ivanne i Renaud.nits.companys.truites
-2.Pierrelatte.Ferenz i Kiane.nits.companys.truites
-3.La Giettaz.Catherine i André.nits.companys.truites
-4.Chamonix, Aosta i Torí.Ignasi i Roser.nits.companys.truites
-5.Mastarone.Massimiliano, Lorella i Mirko.nits.companys.truites
-6.Bolonya.Hotel.nits.companys.truites
-7.Monte San Pietro.Lucía i Peter.nits.companys.truites
-8.Atenes.Apartament.nits.companys.truites
-9.Prinilas (Malcolm).Malcolm.nits.companys.truites
-10.Prinilas (Lemon house).Sudi i Chi.nits.companys.truites
-11.Ano Korakiana.Ignasi i Roser.nits.companys.truites
-12.Tessalònica.Aeroport.nits.companys.truites
-13.Mastarone.Massimiliano, Laura i Barby.nits.companys.truites
-14.Perpinyà.Autobús.nits.companys.truites
-15.Picherande.Aude, Anne i Roxanne.nits.companys.truites
+1.Mas Cabanats, Valmanya.Ivanne i Renaud.nits.truites.1
+2.Pierrelatte.Ferenz i Kiane.nits.truites.2
+3.La Giettaz.Catherine i André.nits.truites.3
+4.Chamonix, Aosta i Torí.Ignasi i Roser.nits.truites.4
+5.Mastarone.Massimiliano, Lorella i Mirko.nits.truites.imatges
+6.Bolonya.Hotel.nits.truites.imatges
+7.Monte San Pietro.Lucía i Peter.nits.truites.imatges
+8.Atenes.Apartament.nits.truites.imatges
+9.Prinilas (Malcolm).Malcolm.nits.truites.imatges
+10.Prinilas (Lemon house).Sudi i Chi.nits.truites.imatges
+11.Ano Korakiana.Ignasi i Roser.nits.truites.imatges
+12.Tessalònica.Aeroport.nits.truites.imatges
+13.Mastarone.Massimiliano, Laura i Barby.nits.truites.imatges
+14.Perpinyà.Autobús.nits.truites.imatges
+15.Picherande.Aude, Anne i Roxanne.nits.truites.imatges
