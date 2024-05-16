@@ -170,13 +170,20 @@ function crearMedia(numeroArgument, cadenamedia, id) {
             nouElement.controls = true;
             nouElement.classList.add("video");
 
+        } else if (arrayCadenes[i].startsWith("https://www.youtube.com/")) {
+            // Si és una URL de YouTube, crea un element iframe
+            var videoId = arrayCadenes[i].split("/embed/")[1];
+            nouElement = document.createElement("iframe");
+            nouElement.src = "https://www.youtube.com/embed/" + videoId;
+            nouElement.title = "Vídeo";
+            nouElement.allowFullscreen = true;
+
         } else {
             // Si no, crea un element d'imatge
             nouElement = document.createElement("img");
             nouElement.src = "../5.Correr/Imatges/" + id + "/" + (i + 1) + "." + arrayCadenes[i];
             nouElement.alt = "Imatge " + (i + 1);
             nouElement.loading = "lazy"; 
-
         }
 
         var nouDiv = document.createElement("div");

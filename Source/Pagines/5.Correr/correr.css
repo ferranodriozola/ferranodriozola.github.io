@@ -142,6 +142,7 @@ background-color: var(--color35);
 
 .filters ul {
   list-style: none;
+  margin-left: -40px;
 }
 
 .filters li,
@@ -297,7 +298,7 @@ background-color: var(--color35);
   border-radius: 4px;
 }
 
-.grid-item video {
+.grid-item iframe {
   width: 100%;
   height: auto;
   display: block;
@@ -308,7 +309,7 @@ background-color: var(--color35);
   width: 100%;
 }
 
-.video {
+.iframe {
   width: 100%;
   height: auto;
 }
