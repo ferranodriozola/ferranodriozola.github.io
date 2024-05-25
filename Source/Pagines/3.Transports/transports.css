@@ -42,7 +42,6 @@ html {
   background-color: var(--color35);
 }
 
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -81,14 +80,13 @@ main {
   justify-content: center;
   padding: 20px;
 }
-  
+
 /* Estil per al menú desplegable */
 .dropdown {
   position: absolute;
   top: 20px; /* Ajusta aquest valor segons la teva necessitat */
   left: 20px; /* Ajusta aquest valor segons la teva necessitat */
 }
-
 
 .dropdown-content {
   display: none;
@@ -118,26 +116,25 @@ main {
 }
 
 .dropbtn {
-background-color: var(--color50);
-color: white;
-padding: 16px;
-font-size: 16px;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-transition: background-color 0.2s ease;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+  background-color: var(--color50);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 }
 
 .dropbtn:hover, .dropbtn:focus {
-background-color: var(--color35);
+  background-color: var(--color35);
 }
 
 .filters ul {
   list-style: none;
   margin-left: -40px;
 }
-
 
 .filters li,
 .filters a {
@@ -164,4 +161,105 @@ background-color: var(--color35);
 .filters a:visited,
 .filters a:active {
   color: black;
+}
+
+.taula {
+  width: 75%;
+  height: 1850px;
+  border: none;
+}
+
+#taula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.item {
+  border: 2px solid black;
+  padding: 0px 10px;
+  margin: 10px;
+  width: 125px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.titol {
+  font-size: 1.4em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.imatges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.large-image {
+  width: auto;
+  height: 600px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.large-image:hover {
+  border-color: var(--color75);
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalment les miniatures */
+  height: 100%; /* Assegura que l'alçada del contenidor de miniatures ocupi tot l'espai disponible */
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.thumbnail img {
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.thumbnail img:hover{
+  border-color: var(--color75);
+}
+
+.grafics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Per distribuir els iframes equitativament */
+  margin-bottom: 5px; /* Espai entre files */
+  margin-top: 20px;
+}
+
+.graph {
+  flex: 0 0 calc(50% - 10px); /* Calculem la mida de cada iframe, tenint en compte el marge */
+  margin-bottom: 10px; /* Espai entre iframes */
+  border:none;
+  height: 500px;
+  margin-left: 5px;
+  margin-right: 5px;
 }

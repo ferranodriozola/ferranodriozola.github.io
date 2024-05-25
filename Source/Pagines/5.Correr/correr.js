@@ -161,22 +161,17 @@ function crearMedia(numeroArgument, cadenamedia, id) {
 
     for (var i = 0; i < numero; i++) {
         var nouElement;
-        if (arrayCadenes[i].endsWith("mp4") || arrayCadenes[i].endsWith("avi") || arrayCadenes[i].endsWith("mov") || arrayCadenes[i].endsWith("MP4")) {
-            // Si l'extensió és de vídeo, crea un element de vídeo
-            nouElement = document.createElement("video");
-            nouElement.src = "../5.Correr/Videos/" + id + "/" + (i + 1) + "." + arrayCadenes[i];
-            nouElement.alt = "Vídeo " + (i + 1);
-            nouElement.loading = "lazy"; 
-            nouElement.controls = true;
-            nouElement.classList.add("video");
-
-        } else if (arrayCadenes[i].startsWith("https://www.youtube.com/")) {
+        if (arrayCadenes[i].startsWith("https://www.youtube.com/")) {
             // Si és una URL de YouTube, crea un element iframe
             var videoId = arrayCadenes[i].split("/embed/")[1];
             nouElement = document.createElement("iframe");
             nouElement.src = "https://www.youtube.com/embed/" + videoId;
-            nouElement.title = "Vídeo";
+            nouElement.loading = "lazy"; 
+            nouElement.alt = "Vídeo " + (i + 1);
             nouElement.allowFullscreen = true;
+            nouElement.controls = true;
+            nouElement.classList.add("video");
+
 
         } else {
             // Si no, crea un element d'imatge

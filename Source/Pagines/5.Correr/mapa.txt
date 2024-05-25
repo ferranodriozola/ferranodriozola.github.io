@@ -1,9 +1,9 @@
-#1#3.13#0:38:22#172#12:15#Valmanya#13/08#1#5#jpg,jpg,jpg,jpg,https://www.youtube.com/embed/9mmmBaruZe0?si=r0UbY7ndI8_Jr6tE#---
-#2#2.77#0:19:55#100#07:11#Valmanya#15/08#0#6#jpg,jpg,jpg,jpg,jpg,https://www.youtube.com/embed/wB0-XUFNHo8?si=N11qGnur0JXK2jRR#---
+#1#3.13#0:38:22#172#12:15#Valmanya#13/08#1#5#jpg,jpg,jpg,jpg,****#---
+#2#2.77#0:19:55#100#07:11#Valmanya#15/08#0#6#jpg,jpg,jpg,jpg,jpg,****#---
 . Post Canigó, primers 5km#3#5.01#0:36:56#22#07:22#Pierrelatte#22/08#1#0##---
 . Mig plovent#4#6.31#0:42:36#18#06:45#Pierrelatte#26/08#1#0##Visca l'èpica!!!
 #5#6.69#0:43:38#24#06:31#Pierrelatte#27/08#0#0##---
-. Aviat 10km!#6#7.31#0:53:26#25#07:19#Pierrelatte#29/08#0#12#JPG,JPG,JPG,JPG,JPG,MP4,MP4,MP4,MP4,MP4,MP4,MP4#---
+. Aviat 10km!#6#7.31#0:53:26#25#07:19#Pierrelatte#29/08#0#12#JPG,JPG,JPG,JPG,JPG,****,****,****,****,****,****,****#---
 . Una mica de muntanya i desnivell#7#7.02#0:55:24#171#07:54#La Giettaz#01/09#0#0##Fent natura, fent salut!
 . Més muntanya i més kilòmetres#8#7.81#0:56:04#201#07:11#La Giettaz#04/09#0#0##---
 . Primers 10km, i amb desnivell! Final gloriós a la Cascada :)#9#10.06#1:17:17#193#07:41#La Giettaz#06/09#0#0##I la glòria és eterna!!!
