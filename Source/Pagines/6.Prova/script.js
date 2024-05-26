@@ -1,98 +1,83 @@
-// Obté els elements HTML
-var modal = document.getElementById("media-ampliat");
-var media = document.querySelectorAll(".imatge-modal, .video-modal"); // Selecciona tant les imatges com els vídeos
-var tancar = document.querySelector(".close"); // Botó de tancar
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById("media-ampliat");
+  const modalImg = document.getElementById("imatge-ampliada");
+  const modalVideo = document.createElement('iframe');
+  modalVideo.className = "modal-content-img video-modal";
+  modalVideo.allowFullscreen = true;
+  let currentIndex;
+  let currentGroup;
 
-media.forEach(function(element) {
-  element.addEventListener("click", function() {
+  const groups = {};
+
+  // Agrupem els elements per la classe gallery
+  document.querySelectorAll('.gallery').forEach(div => {
+    const elements = div.querySelectorAll('.imatge-modal, .video-modal');
+    groups[div.id] = Array.from(elements);
+    elements.forEach((element, index) => {
+      element.dataset.group = div.id;
+      element.dataset.index = index;
+      element.addEventListener('click', () => {
+        currentGroup = div.id;
+        currentIndex = index;
+        openModal(element);
+      });
+    });
+  });
+
+  const openModal = (element) => {
     modal.style.display = "block";
-    if (element.tagName === "IMG") {
-      modal.querySelector(".modal-content-img").src = element.src;
-      canviarContingutAImatge();
-    } else if (element.tagName === "IFRAME") {
-      var videoSrc = element.getAttribute('src');
-      modal.querySelector(".modal-content-vid").src = videoSrc;
-      canviarContingutAVideo();
+    if (element.tagName.toLowerCase() === 'img') {
+      modalImg.style.display = "block";
+      modalImg.src = element.src;
+      modalVideo.style.display = "none";
+      modalVideo.src = '';
+      modal.classList.remove('video-modal-style');
+    } else {
+      modalImg.style.display = "none";
+      modalImg.src = '';
+      modalVideo.src = element.src;
+      modal.appendChild(modalVideo);
+      modalVideo.style.display = "block";
+      modal.classList.add('video-modal-style');
+    }
+    document.addEventListener('keydown', handleKeydown);
+  };
+
+  const closeModal = () => {
+    modal.style.display = "none";
+    modalImg.src = "";
+    modalVideo.src = "";
+    modal.classList.remove('video-modal-style');
+    document.removeEventListener('keydown', handleKeydown);
+  };
+
+  document.querySelector('.close').onclick = () => closeModal();
+
+  const changeMedia = (direction) => {
+    const groupElements = groups[currentGroup];
+    currentIndex += direction;
+    if (currentIndex >= groupElements.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = groupElements.length - 1;
+    openModal(groupElements[currentIndex]);
+  };
+
+  document.querySelector('.prev').onclick = () => changeMedia(-1);
+  document.querySelector('.next').onclick = () => changeMedia(1);
+
+  const handleKeydown = (event) => {
+    if (event.key === 'ArrowLeft') {
+      changeMedia(-1);
+    } else if (event.key === 'ArrowRight') {
+      changeMedia(1);
+    } else if (event.key === 'Escape') {
+      closeModal();
+    }
+  };
+
+  // Event listener per tancar la modal en fer clic fora del contingut
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
     }
   });
 });
-
-// Tancar la finestra modal quan es fa clic en el botó de tancar
-tancar.addEventListener("click", function() {
-  modal.style.display = "none";
-});
-
-// Tancar la finestra modal quan es fa clic fora del mitjà
-window.addEventListener("click", function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
-
-
-
-
-function canviarImatge(direccio) {
-  var mediaActual = modal.querySelector(".modal-content-img, .modal-content-vid");
-
-  var currentIndex = Array.from(media).findIndex(function(element) {
-      return element.src === mediaActual.src || element.getAttribute('src') === mediaActual.getAttribute('src');
-  });
-
-  var newIndex = currentIndex + direccio;
-
-  // Comprovació addicional de l'índex actual
-  if (currentIndex === -1) {
-      console.error("No s'ha trobat l'índex de l'element multimèdia actual.");
-      return;
-  }
-
-  // Comprovació de límits per assegurar-nos que l'índex no surt dels límits de l'array
-  if (newIndex < 0 || newIndex >= media.length) {
-      console.warn("L'índex està fora dels límits: ", newIndex);
-      return;
-  }
-
-  var nextMedia = media[newIndex];
-  var currentTag = nextMedia.tagName;
-
-  console.log("currentIndex: ", currentIndex);
-  console.log("newIndex: ", newIndex);
-  console.log("currentTag: ", currentTag);
-  console.log("nextMedia: ", nextMedia);
-
-  if (currentTag === "IMG") {
-      console.log("IMG");
-      canviarContingutAImatge();
-      document.getElementById("imatge-ampliada").src = nextMedia.src;
-  } else if (currentTag === "IFRAME") {
-      console.log("IFRAME");
-      canviarContingutAVideo();
-      document.getElementById("video-ampliat").src = nextMedia.src;
-  } else {
-      console.error("Tag desconegut: ", currentTag);
-  }
-}
-
-
-
-
-
-
-function canviarContingutAVideo() {
-  var imatge = document.getElementById('imatge-ampliada');
-  var iframe = document.getElementById('video-ampliat');
-  
-  // Amaga la imatge i mostra l'iframe
-  imatge.style.display = 'none';
-  iframe.style.display = 'block';
-}
-
-function canviarContingutAImatge() {
-  var imatge = document.getElementById('imatge-ampliada');
-  var iframe = document.getElementById('video-ampliat');
-  
-  // Amaga l'iframe i mostra la imatge
-  imatge.style.display = 'block';
-  iframe.style.display = 'none';
-}

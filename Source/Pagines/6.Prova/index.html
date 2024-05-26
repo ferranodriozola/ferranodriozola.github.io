@@ -6,24 +6,31 @@
 <title>Finestra Modal d'Imatge</title>
 <link rel="stylesheet" href="styles.css">
 <script defer src="script.js"></script>
-
 </head>
 <body>
 
-<!-- Imatges -->
-<iframe src="https://www.youtube.com/embed/Qpq05vL16Ss?si=I4nsqMbE-Y_yeywH" class="video-modal" loading="lazy" allowfullscreen="" ></iframe>
-<iframe src="https://www.youtube.com/embed/LxvUS-29m9M?si=jFXMyd2cCfXQ56Bl" class="video-modal" loading="lazy" allowfullscreen="" ></iframe>
-<img src="../4.Mascotes/Fotos/Acca.jpg" alt="Imatge 1" class="imatge-modal">
-<img src="../4.Mascotes/Fotos/Lilith.JPG" alt="Imatge 2" class="imatge-modal">
-<img src="../4.Mascotes/Fotos/Filakia.jpg" alt="Imatge 3" class="imatge-modal">
+<!-- Imatges i vídeos -->
+<div class="gallery" id="1">
+  <iframe src="https://www.youtube.com/embed/Qpq05vL16Ss?si=I4nsqMbE-Y_yeywH" class="video-modal" loading="lazy" allowfullscreen=""></iframe>
+  <iframe src="https://www.youtube.com/embed/LxvUS-29m9M?si=jFXMyd2cCfXQ56Bl" class="video-modal" loading="lazy" allowfullscreen=""></iframe>
+  <img src="../4.Mascotes/Fotos/Acca.jpg" alt="Imatge 1" class="imatge-modal">
+  <img src="../4.Mascotes/Fotos/Lilith.JPG" alt="Imatge 2" class="imatge-modal">
+  <img src="../4.Mascotes/Fotos/Filakia.jpg" alt="Imatge 3" class="imatge-modal">
+</div>
+
+<div class="gallery" id="2">
+  <iframe src="https://www.youtube.com/embed/T2-muZcAtsM?si=4dgCpenGEy9_Q8tN" class="video-modal" loading="lazy" allowfullscreen=""></iframe>
+  <img src="../4.Mascotes/Fotos/Gigi.jpg" alt="Imatge 1" class="imatge-modal">
+  <img src="../4.Mascotes/Fotos/Pommie.jpg" alt="Imatge 2" class="imatge-modal">
+  <img src="../4.Mascotes/Fotos/Noisette.jpg" alt="Imatge 3" class="imatge-modal">
+</div>
 
 <!-- Finestra Modal -->
 <div id="media-ampliat" class="modal">
-    <span class="prev" onclick="canviarImatge(-1)">&#10094;</span>
-    <span class="next" onclick="canviarImatge(1)">&#10095;</span>
+  <span class="prev" onclick="canviarImatge(-1)">&#10094;</span>
+  <span class="next" onclick="canviarImatge(1)">&#10095;</span>
   <span class="close">&times;</span>
   <img class="modal-content-img" id="imatge-ampliada">
-  <iframe class="modal-content-vid" id="video-ampliat"></iframe>
 </div>
 
 </body>
